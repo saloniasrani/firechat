@@ -1,7 +1,7 @@
 import React from "react";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 function SignOut() {
   const style = {
@@ -10,9 +10,9 @@ function SignOut() {
 
   return (
     <div>
-      <Button onClick={() => signOut(auth)} className={style.button}>
-        Log Out{" "}
-      </Button>
+      <button onClick={() => signOut(auth)} className={style.button}>
+        Log Out
+      </button>
     </div>
   );
 }

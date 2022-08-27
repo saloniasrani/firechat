@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../firebase";
-
 import Message from "./Message";
 import SendMessage from "./SendMessage";
 import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
-const style = {
-  main: `flex flex-col p-[10px]`,
-};
+
 function Chat() {
   const [messages, setMessages] = useState([]);
   const scroll = useRef();
+  const style = {
+    main: `flex flex-col p-[10px] `,
+  };
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("timestamp"));
@@ -22,6 +22,7 @@ function Chat() {
     });
     return () => unsubscribe();
   }, []);
+
   return (
     <>
       <main className={style.main}>
@@ -32,7 +33,7 @@ function Chat() {
       </main>
 
       <SendMessage scroll={scroll} />
-      <span ref={scroll}></span>
+      <div ref={scroll}></div>
     </>
   );
 }

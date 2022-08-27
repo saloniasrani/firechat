@@ -1,5 +1,4 @@
 import React from "react";
-import Chat from "./Chat";
 import SignIn from "./SignIn";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
@@ -14,7 +13,7 @@ function Navbar() {
   return (
     <div className={style.nav}>
       <h1 className={style.heading}>Chat App</h1>
-      {user ? <Chat /> && <SignOut /> : <SignIn />}
+      {user ? <SignOut /> : <SignIn />}
     </div>
   );
 }

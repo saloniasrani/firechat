@@ -6,7 +6,7 @@ import SignOut from "./SignOut";
 
 function Navbar() {
   const style = {
-    nav: `bg-gray-800 h-20 flex justify-between items-center p-4`,
+    nav: ` w-[728px]  bg-gray-800 h-[8vh] flex justify-between items-center p-4 `,
     heading: `text-white text-3xl`,
   };
   const [user] = useAuthState(auth);

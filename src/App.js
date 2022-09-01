@@ -4,17 +4,15 @@ import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const style = {
-  appContainer: `max-w-[728px] mx-auto text-center`,
-  section: `flex flex-col h-[90vh] bg-gray-100 mt-10 shadow-xl border relative`,
+  appContainer: `  w-[728px] mx-auto `,
+  section: ` h-[86vh] overflow-scroll  flex flex-col bg-gray-100  shadow-xl border relative`,
 };
 function App() {
   const [user] = useAuthState(auth);
   return (
     <div className={style.appContainer}>
-      <section className={style.section}>
-        <Navbar />
-        {user ? <Chat /> : null}
-      </section>
+      <Navbar />
+      <section className={style.section}>{user ? <Chat /> : null}</section>
     </div>
   );
 }

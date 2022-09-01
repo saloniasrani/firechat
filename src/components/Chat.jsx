@@ -23,6 +23,10 @@ function Chat() {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    scroll.current.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, [messages]);
+
   return (
     <>
       <main className={style.main}>
